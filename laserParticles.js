@@ -56,6 +56,7 @@ function bulletEnemyCollision() {
           bullets.splice(i, 1);
         }
         score+=10
+        explosionSound.play();
         highestScores();
       }
     }

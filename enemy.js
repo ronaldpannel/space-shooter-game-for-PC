@@ -55,12 +55,12 @@ function playerEnemyCollision() {
       highestScores();
       ctx.font = "25px Aerial";
       ctx.fillStyle = "white";
-
       ctx.fillText(
         " Game Over Your Score was : " + score,
         canvas.width/2 -170,
         canvas.height / 2 - 70
       ); 
+      explosionSound.play();
       startBtn.style.display = 'block'
       hsResetBtn.style.display = 'block'
       cancelAnimationFrame(animationId);

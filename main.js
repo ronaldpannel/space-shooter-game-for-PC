@@ -8,7 +8,10 @@ const scores = document.getElementById("score");
 let highestScore = document.getElementById("hScore");
 const startBtn = document.getElementById("startBtn");
 const hsResetBtn = document.getElementById("hsResetBtn");
-
+let laserSound = document.getElementById("laserSound");
+laserSound.preload = "auto";
+let explosionSound = document.getElementById("explosionSound");
+explosionSound.preload = "auto";
 let player;
 let bullet;
 let bullets = [];
@@ -64,6 +67,7 @@ canvas.addEventListener("click", function (e) {
   let color = "white";
   bullet = new Bullet(x, y, r, velX, velY, color);
   bullets.push(bullet);
+  laserSound.play();
 });
 function highestScores() {
   if (score > parseInt(localStorage.getItem("sSHighScore"))) {
